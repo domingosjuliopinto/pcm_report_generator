@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>STUDENT MARKS CARD</title>
+<style>
+.Design{
+	border : 5px outset red;
+	background-color:lightblue;
+	text-align:center;
+	}
+td, th {
+	  border: 1px solid #000000;
+	  text-align: center;
+	  padding: 8px;
+	}
+table {
+	  font-family: arial, sans-serif;
+	  border-collapse: collapse;
+	  width: 100%;
+	  align : center;
+	}
+</style>
+</head>
+<body bgcolor="darkblue">
+<br>
+<br>
+<div class="Design">
+ <h1>STUDENT MARKS CARD:</h1>
+<table>
+<tr align="center">
+<th> Physics </th>
+<th> Chemistry </th>
+<th> Mathematics </th>
+<th> Total </th>
+<th> Grade </th>
+</tr>
+<tr align="center" bgcolor="white">
+<td th:text="${result.physics}">  </td>
+<td th:text="${result.chemistry}">  </td>
+<td th:text="${result.math}"> </td>
+<td th:text="${result.total}">  </td>
+<td th:text="${result.grade}">  </td>
+</tr>
+</table>
+   
+     <script type="text/javascript">
+    function calc()
+    {
+       form=document.getElementById("form1");
+       sub1=form.sub1.value;
+       sub2=form.sub2.value;
+       sub3=form.sub3.value;
+       
+       
+       total=parseInt(sub1)+parseInt(sub2)+parseInt(sub3);
+       
+	   form.per.value=((parseInt(total)/300)*100);
+       // if any one sub is <35 then result is "Fail".
+       if(form.sub1.value<0||form.sub1.value>100||form.sub2.value<0||form.sub2.value>100||form.sub3.value<0||form.sub3.value>100){form.per.value="MARKS OUT OF RANGE"}
+       
+    }
+</script>
+
+<form id="form1">
+    PERCENTAGE CALCULATOR<br /><br />
+  Enter the Name :  <input type="text" size="30" name="name"/>
+   
+  Marks in Physics :  <input type="text" size="30" name="sub1"/>
+
+  Marks in Chemistry :  <input type="text" size="30" name="sub2"/>
+
+  Marks in Math :  <input type="text" size="30" name="sub3"/><br /><br />
+
+  
+ 
+ 
+  
+  
+  Percentage:<input type="text" size="20" name="per"/><br/><br />
+  <input type="button" name="btn" value="Calculate" onclick="calc()"/><br />
+  <input type="reset" name="Btn2" value="Reset"/>
+</form>
+<p> NOTE: Marks are in the range 0 to 100.</p><br/>
+
+</div>
+</body>
+</html>
