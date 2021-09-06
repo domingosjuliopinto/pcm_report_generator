@@ -1,52 +1,78 @@
 package com.codes.pro;
 
+import java.io.IOException;
 
-public class SubjectMarks {
-	private String physics;
-	private	String chemistry;
-	private	String math;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/Grade")
+
+public class SubjectMarks extends HttpServlet{
+	public static final long serialVersionUID = 1L;
+	
+	private int physics;
+	private	int chemistry;
+	private	int math;
 	private int total;
 	private	char grade;
-	private String ViewName;
-	public String getPhysics() {
+	
+	public int ph;
+	public int ch;
+	public int ma;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd=request.getRequestDispatcher("PCMFront.html")	;
+		
+		ph=Integer.parseInt(request.getParameter("Physics"));
+		ch=Integer.parseInt(request.getParameter("Chemistry"));
+		ma=Integer.parseInt(request.getParameter("Maths"));
+		
+		rd.include(request,response);
+	}
+	
+	public int getPhysics() {
 		return physics;
 	}
-	public void setPhysics(String physics) {
-		this.physics = physics;
+	public void setPhysics(int Physics) {
+		this.physics = Physics;
 	}
-	public String getChemistry() {
+	public void setPhysics() {
+		this.physics = ph;
+	}
+	public int getChemistry() {
 		return chemistry;
 	}
-	public void setChemistry(String chemistry) {
-		this.chemistry = chemistry;
+	public void setChemistry(int Chemistry) {
+		this.chemistry = Chemistry;
 	}
-	public String getMath() {
+	public void setChemistry() {
+		this.chemistry = ch;
+	}
+	public int getMath() {
 		return math;
 	}
-	public void setMath(String math) {
-		this.math = math;
+	public void setMath(int Math) {
+		this.math = Math;
+	}
+	public void setMath() {
+		this.math = ma;
 	}
 	public int getTotal() {
 		return total;
 	}
-	public void setTotal(int total) {
-		this.total = total;
+	public void setTotal(int Total) {
+		this.total = Total;
 	}
 	public char getGrade() {
 		return grade;
 	}
 	public void setGrade(char grade) {
 		this.grade = grade;
-	}
-	public String getViewName() {
-		return ViewName;
-	}
-	public void setViewName(String viewName) {
-		ViewName = viewName;
-	}
-	
-	
-		
-	}
+	}	
+}
 	
 

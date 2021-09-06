@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>STUDENT MARKS CARD</title>
+<title>PCM Result</title>
 <style>
 .Design{
 	border : 5px outset red;
@@ -27,9 +27,9 @@ table {
 <br>
 <br>
 <div class="Design">
- <h1>STUDENT MARKS CARD:</h1>
+ <h1>PCM Report Generator</h1>
 <table>
-<tr align="center">
+<tr align="center" bgcolor="lightgreen">
 <th> Physics </th>
 <th> Chemistry </th>
 <th> Mathematics </th>
@@ -44,46 +44,51 @@ table {
 <td th:text="${result.grade}">  </td>
 </tr>
 </table>
-   
-     <script type="text/javascript">
+<script type="text/javascript">
     function calc()
     {
+
+  	  var x = document.forms["form1"]["Physics"].value;
+  	  if (x == "") {
+  		  alert('Physics marks must be filled out');
+  		  return false;
+  	    
+  	  }
+  	  var x = document.forms["form1"]["Chemistry"].value;
+  	  if (x == "") {
+  		  alert('Chemistry marks must be filled out');
+  		  return false;
+  	    
+  	  }
+  	  var x = document.forms["form1"]["Math"].value;
+  	  if (x == "") {
+  		  alert('Math marks must be filled out');
+  		  return false;}
+  		  
        form=document.getElementById("form1");
-       sub1=form.sub1.value;
-       sub2=form.sub2.value;
-       sub3=form.sub3.value;
-       
-       
-       total=parseInt(sub1)+parseInt(sub2)+parseInt(sub3);
-       
-	   form.per.value=((parseInt(total)/300)*100);
-       // if any one sub is <35 then result is "Fail".
-       if(form.sub1.value<0||form.sub1.value>100||form.sub2.value<0||form.sub2.value>100||form.sub3.value<0||form.sub3.value>100){form.per.value="MARKS OUT OF RANGE"}
-       
+       Physics=form.Physics.value;
+       Chemistry=form.Chemistry.value;
+       Math=form.Math.value;
+              
     }
 </script>
 
-<form id="form1">
-    PERCENTAGE CALCULATOR<br /><br />
-  Enter the Name :  <input type="text" size="30" name="name"/>
+<form id="form1" action="Grade" onsubmit="calc()">
+  <br /><br /> <h2>Enter your marks</h2> <br /><br />
+     
+  Marks in Physics :  <input type="number" size="30" name="Physics" min="0" max="100"/>
+
+  Marks in Chemistry :  <input type="number" size="30" name="Chemistry" min="0" max="100"/>
+
+  Marks in Math :  <input type="number" size="30" name="Math" min="0" max="100"/><br /><br />
+
+ <input type="submit" value="Calculate"/><br /><br/>
    
-  Marks in Physics :  <input type="text" size="30" name="sub1"/>
-
-  Marks in Chemistry :  <input type="text" size="30" name="sub2"/>
-
-  Marks in Math :  <input type="text" size="30" name="sub3"/><br /><br />
-
-  
- 
- 
-  
-  
-  Percentage:<input type="text" size="20" name="per"/><br/><br />
-  <input type="button" name="btn" value="Calculate" onclick="calc()"/><br />
-  <input type="reset" name="Btn2" value="Reset"/>
 </form>
-<p> NOTE: Marks are in the range 0 to 100.</p><br/>
-
+<p>Note:<br>
+If marks in any subject is less than 40 then the candidate has failed.<br>
+The Marks range from 0 to 100. 
+A Grade = 80% and above , B Grade = 60% to 79%, C Grade = 40% to 59%</p>
 </div>
 </body>
 </html>
