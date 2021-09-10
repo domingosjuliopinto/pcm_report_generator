@@ -3,6 +3,8 @@ package com.codes.pro;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -31,10 +33,49 @@ public class PCMControl {
 		else { return 'C';}
 		
 	}
+	
+	@GetMapping("/json")
+	@ResponseBody
+	  public JsonSMarks displayResult(@RequestParam(name="Physics",required=false,defaultValue="0")  String Physics,
+			  @RequestParam(name="Chemistry",required=false,defaultValue="0") String Chemistry,
+			  @RequestParam(name="Math",required=false,defaultValue="0") String Math ) 
+	  { 
+		JsonSMarks result = new JsonSMarks();
+		jsonErrorResponse exe = new jsonErrorResponse(); 
+		int p1=Integer.parseInt(Physics);
+		int c1=Integer.parseInt(Chemistry);
+		int m1=Integer.parseInt(Math);
+		if(p1<0||p1>100||c1<0||c1>100||m1<0||m1>100) {
+			JsonSMarks mav = new JsonSMarks(); 
+			mav.setViewName("Error: Marks are out of Range. Range = 0 to 100 ");   
+			return mav;
+		}else{
+			try { 
+				result.setPhysics(Physics);
+				result.setChemistry(Chemistry);
+				result.setMath(Math);
+				result.setTotal(Total( p1,c1,m1));
+				result.setGrade(grade(result.getTotal() ));
+				result.setViewName("Successful Build");
+			}catch(Exception e) { 
+				exe.setMessage("Exception:Number Format Exception");
+			    exe.setDetails(""+e);
+				System.out.println("Exception Here:"+e);
+			}
+		}		  
+	    return result;
+}
+	
+
+	@PostMapping(value="/json",consumes="application/json",produces="application/json")
+	@ResponseBody
+	public JsonSMarks acceptResult(@RequestBody JsonSMarks result){	
+		return result;
+	}
 		
-	   @GetMapping("/Grade")
-	   @ResponseBody
-	    public ModelAndView htmlView(Model model,@RequestParam(name="Physics",required=false,defaultValue="0") int Physics,
+	@GetMapping("")
+	@ResponseBody
+	public ModelAndView htmlView(Model model,@RequestParam(name="Physics",required=false,defaultValue="0") int Physics,
 				  @RequestParam(name="Chemistry",required=false,defaultValue="0") int Chemistry,
 				  @RequestParam(name="Math",required=false,defaultValue="0") int Math )
 	  {    

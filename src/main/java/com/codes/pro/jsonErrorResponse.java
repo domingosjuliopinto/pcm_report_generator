@@ -2,6 +2,7 @@ package com.codes.pro;
 
 public class jsonErrorResponse extends SubjectMarks{
 	
+	private static final long serialVersionUID = 1L;
 	private String message;
 	private String details;
 	

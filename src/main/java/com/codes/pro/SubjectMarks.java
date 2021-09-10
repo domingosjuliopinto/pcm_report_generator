@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Grade")
+@WebServlet("")
 
 public class SubjectMarks extends HttpServlet{
 	public static final long serialVersionUID = 1L;
