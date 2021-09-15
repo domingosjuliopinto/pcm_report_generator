@@ -22,6 +22,13 @@ table {
 	  align : center;
 	}
 </style>
+<script>
+	var url_string = window.location.href; // www.test.com?filename=test
+	var url = new URL(url_string);
+	var JPhy = url.searchParams.get("Physics")?url.searchParams.get("Physics"):0;
+	var JChem = url.searchParams.get("Chemistry")?url.searchParams.get("Chemistry"):0;
+	var JMath = url.searchParams.get("Math")?url.searchParams.get("Math"):0;
+</script>
 </head>
 <body bgcolor="darkblue">
 <br>
@@ -69,6 +76,9 @@ table {
        Physics=form.Physics.value;
        Chemistry=form.Chemistry.value;
        Math=form.Math.value;
+       JPhy=Physics;
+       JChem=Chemistry;
+       JMath=Math;
               
     }
 </script>
@@ -82,9 +92,14 @@ table {
 
   Marks in Math :  <input type="number" size="30" name="Math" min="0" max="100"/><br /><br />
 
- <input type="submit" value="Calculate"/><br /><br/>
-   
+ <input type="submit" value="Calculate"/>
 </form>
+<br/>
+ <a href="/"><button>Reset</button></a>
+<script>
+	var loc = "/json?Physics="+JPhy+"&Chemistry="+JChem+"&Math="+JMath;
+    document.write('<a href="' + loc + '"><button>JSON View</button></a>');
+</script>
 <p>Note:<br>
 If marks in any subject is less than 40 then the candidate has failed.<br>
 The Marks range from 0 to 100. 
