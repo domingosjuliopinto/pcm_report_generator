@@ -79,20 +79,26 @@ public class PCMControl {
 				  @RequestParam(name="Chemistry",required=false,defaultValue="0") int Chemistry,
 				  @RequestParam(name="Math",required=false,defaultValue="0") int Math )
 	  {    
-		   
-		   SubjectMarks result = new SubjectMarks();
-		    
-		   result.setPhysics(Physics);
-		   result.setChemistry(Chemistry);
-		   result.setMath(Math);
-		   result.setTotal(Total( Physics,Chemistry,Math));
-		   result.setGrade(grade(result.getTotal() ));
-		   
-	      
-	        ModelAndView mav = new ModelAndView();
-	        mav.addObject("result", result);
-	        mav.setViewName("PCMFront");   
-	        return mav;
+		   if(Physics<0||Physics>100||Chemistry<0||Chemistry>100||Math<0||Math>100)
+		   {
+			   	ModelAndView mav = new ModelAndView();
+		        mav.setViewName("outofrange");   
+		        return mav;
+		   }else {
+			   SubjectMarks result = new SubjectMarks();
+			    
+			   result.setPhysics(Physics);
+			   result.setChemistry(Chemistry);
+			   result.setMath(Math);
+			   result.setTotal(Total( Physics,Chemistry,Math));
+			   result.setGrade(grade(result.getTotal() ));
+			   
+		      
+		        ModelAndView mav = new ModelAndView();
+		        mav.addObject("result", result);
+		        mav.setViewName("PCMFront");   
+		        return mav;
+		   }
 	  }
   }
 
