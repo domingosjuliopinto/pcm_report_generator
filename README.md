@@ -11,7 +11,8 @@ eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localh
 
 <h3>Requirements</h3>
 1. Eclipse IDE for Java Developers 2021-06 <br>
-2. JSON Viewer (optional)<br>
+2. Maven Dependencies from general purpose tools (if it's not already pre-installed)
+3. JSON Viewer (optional)<br>
 
 <h3>Steps to Run</h3>
 1. Right click on PCMApp.java <br>
@@ -20,8 +21,8 @@ eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localh
 4. Enter the url as mentioned above with the appropriate port no. <br>
 
 <h3>Output</h3>
-![Capture](./images/Capture.png)
-![Capture2](./images/Capture2.png)
-![Capture3](./images/Capture3.png)
-![Capture4](./images/Capture4.png)
-![Capture5](./images/Capture5.png)
+![alt text](images/Capture.PNG "Image 1")
+![alt text](images/Capture2.PNG "Image 2")
+![alt text](images/Capture3.PNG "Image 3")
+![alt text](images/Capture4.PNG "Image 4")
+![alt text](images/Capture5.PNG "Image 5")
