@@ -3,7 +3,7 @@ This is a report card that generates Physics ,Chemistry and Maths marks.<br>
 We used Java Eclipse IDE.<br>
 Contains Spring Boot Framework<br>
 <br>
-<h3>features<h3><br>
+<h3>features</h3><br>
 <b>version 1</b><br>
 percentage calculator<br>
 json-view<br>
