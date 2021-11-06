@@ -1,35 +1,18 @@
 # PCM Report Generator
-This is a report card that generates Physics ,Chemistry and Maths marks.<br>
-We used Java Eclipse IDE.<br>
-Contains Spring Boot Framework<br>
+This is a report card that displays Physics ,Chemistry and Maths marks.<br>
+Framework: Spring Boot <br>
+
+
+<h3>Features</h3><br>
+1. You can enter your marks in the section provided. <br>
+2. Alternatively you can put marks in url <br>
+eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localhost:8080/?Physics=75&Chemistry=76&Math=75 <br>
+3. Click on Reset to reset the system. <br>
+4. Click on JSON view to view the json view <br>
+
 <br>
-<h3>features</h3><br>
-<b>version 1</b><br>
-percentage calculator<br>
-json-view<br>
-parameters in url is compulsory<br>
-
-<b>version 2</b><br>
-parameters in url not compulsory<br>
-percentage calculator removed<br>
-error page updated<br>
-json-view removed<br>
-marks will appear in the table once inputted<br>
-
-<b>version 3</b><br>
-change in url<br>
-error page updated<br>
-json-view added back<br>
-
-<b>version 3.1</b><br>
-reset button<br>
-button to convert current report generated into json view<br>
-
-<b>version 3.2</b><br>
-error page updated<br>
-bugs fixed<br>
-outofrange error handled<br>
-
-<b>version 3.3</b><br>
-error page updated<br>
-outofrange page updated<br>
+<h3>Steps to Run</h3><br>
+1. Right click on PCMApp.java <br>
+2. Run it as Java Application <br>
+3. Note the port number on which Tomcat server is started <br>
+4. Enter the url as mentioned above with the appropriate port no. <br>
