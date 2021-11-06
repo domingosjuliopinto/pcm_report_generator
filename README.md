@@ -6,7 +6,7 @@ Framework: Spring Boot <br>
 <h3>Features</h3><br>
 1. You can enter your marks in the section provided. <br>
 2. Alternatively you can put marks in url <br>
-eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localhost:8080/?Physics=75&Chemistry=76&Math=75
+eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localhost:8080/?Physics=75&Chemistry=76&Math=75 <br>
 3. Click on Reset to reset the system. <br>
 4. Click on JSON view to view the json view <br>
 
