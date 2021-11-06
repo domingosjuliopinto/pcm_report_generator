@@ -1,5 +1,5 @@
 # PCM Report Generator
-This is a report card that displays Physics ,Chemistry and Maths marks.<br>
+This is a report card generator that displays Physics ,Chemistry and Maths marks.<br>
 Framework: Spring Boot <br>
 
 <h3>Features</h3>
@@ -11,7 +11,7 @@ eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localh
 
 <h3>Requirements</h3>
 1. Eclipse IDE for Java Developers 2021-06 <br>
-2. Maven Dependencies from general purpose tools (if it's not already pre-installed)
+2. Maven Dependencies from 2021-06 - https://download.eclipse.org/releases/2021-06/ (if it's not already installed)<br>
 3. JSON Viewer (optional)<br>
 
 <h3>Steps to Run</h3>
@@ -20,9 +20,14 @@ eg.: http://localhost:8080/json?Physics=75&Chemistry=76&Math=75 or http://localh
 3. Note the port number on which Tomcat server is started <br>
 4. Enter the url as mentioned above with the appropriate port no. <br>
 
-<h3>Output</h3>
-![alt text](images/Capture.PNG "Image 1")
-![alt text](images/Capture2.PNG "Image 2")
-![alt text](images/Capture3.PNG "Image 3")
-![alt text](images/Capture4.PNG "Image 4")
-![alt text](images/Capture5.PNG "Image 5")
+## Output
+Main Page
+![](images/Capture.PNG)
+Wrong URL and Character in Value of Parameter Occurence Error Page
+![](images/Capture2.PNG)
+Out of Range Value of Parameter Error Page
+![](images/Capture3.PNG)
+HTML View of Result
+![](images/Capture4.PNG)
+JSON View of Result
+![](images/Capture5.PNG)
