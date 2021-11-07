@@ -31,7 +31,10 @@ public class PCMControl {
 		else if(t/3>=80) {return 'A';}
 		else if(t/3>=60&t/3<80) {return 'B'; }
 		else { return 'C';}
-		
+	}
+	
+	public float percentage(float t ) {
+		return((t*100)/300);
 	}
 	
 	@GetMapping("/json")
@@ -55,6 +58,7 @@ public class PCMControl {
 				result.setChemistry(Chemistry);
 				result.setMath(Math);
 				result.setTotal(Total( p1,c1,m1));
+				result.setPercentage(percentage(result.getTotal()));
 				result.setGrade(grade(result.getTotal() ));
 				result.setViewName("Successful Build");
 			}catch(Exception e) { 
@@ -91,6 +95,7 @@ public class PCMControl {
 			   result.setChemistry(Chemistry);
 			   result.setMath(Math);
 			   result.setTotal(Total( Physics,Chemistry,Math));
+			   result.setPercentage(percentage(result.getTotal()));
 			   result.setGrade(grade(result.getTotal() ));
 			   
 		      

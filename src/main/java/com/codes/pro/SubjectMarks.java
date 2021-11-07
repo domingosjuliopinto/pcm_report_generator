@@ -18,6 +18,7 @@ public class SubjectMarks extends HttpServlet{
 	private	int chemistry;
 	private	int math;
 	private int total;
+	private float percentage;
 	private	char grade;
 	
 	public int ph;
@@ -67,6 +68,14 @@ public class SubjectMarks extends HttpServlet{
 	public void setTotal(int Total) {
 		this.total = Total;
 	}
+	public float getPercentage() {
+		return percentage;
+	}
+
+	public void setPercentage(float percentage) {
+		this.percentage = percentage;
+	}
+
 	public char getGrade() {
 		return grade;
 	}

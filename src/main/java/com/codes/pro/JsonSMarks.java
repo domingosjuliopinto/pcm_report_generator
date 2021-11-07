@@ -6,6 +6,7 @@ public class JsonSMarks {
 	private	String chemistry;
 	private	String math;
 	private int total;
+	private float percentage;
 	private	char grade;
 	private String ViewName;
 	public String getPhysics() {
@@ -31,6 +32,12 @@ public class JsonSMarks {
 	}
 	public void setTotal(int total) {
 		this.total = total;
+	}
+	public float getPercentage() {
+		return percentage;
+	}
+	public void setPercentage(float percentage) {
+		this.percentage = percentage;
 	}
 	public char getGrade() {
 		return grade;
